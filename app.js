@@ -59,7 +59,7 @@ function setupSquares() {
             var clickedColor = this.style.background;
             //compare color to pickedColor
             if (clickedColor === pickedColor) {
-                // you had this initially set as clickedColor = to pickedColor which 
+                // you had this initially set as clickedColor = to pickedColor which always allowed for whatever color was clicked that would be the correct color
                 updateColorName();
                 messageDisplay.textContent = "Correct!";
                 resetButton.textContent = "Play Again?"
@@ -74,10 +74,11 @@ function setupSquares() {
             } else {
                 this.style.background = "#232323";
                 messageDisplay.textContent = "Try Again"
-                score--;
+                score--; // somewhere down here the code has the bug with the subtraction, I took a nap instead of doing this
                 scoreDisplay.textContent = score;
                 localStorage.setItem('score', score);
             }
+
         });
     }
 }
