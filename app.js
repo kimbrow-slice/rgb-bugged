@@ -71,10 +71,11 @@ function setupSquares() {
                 }
                 scoreDisplay.textContent = score;
                 localStorage.setItem('score', score);
-            } else {
+            } else { // this.style.pointerEvents = "none"; "hides" the block from being accessed again
                 this.style.background = "#232323";
+                this.style.pointerEvents = "none";
                 messageDisplay.textContent = "Try Again"
-                score--; // somewhere down here the code has the bug with the subtraction, I took a nap instead of doing this
+                score--;
                 scoreDisplay.textContent = score;
                 localStorage.setItem('score', score);
             }
